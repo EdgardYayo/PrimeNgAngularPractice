@@ -1,0 +1,14 @@
+<div class="card" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    <p-galleria 
+        [value]="images" 
+        [showIndicators]="true" 
+        [showThumbnails]="false" 
+        [responsiveOptions]="responsiveOptions" 
+        [containerStyle]="{ 'max-width': '640px' }">
+            <ng-template pTemplate="item" let-item>
+                <img [src]="item.itemImageSrc" style="max-width: 500px; display: block; max-height: 400px;" />
+            </ng-template>
+    </p-galleria>
+    <p-button icon="pi pi-heart" [rounded]="true" [text]="true" [raised]="true" severity="help" />
+    <p-button routerLink="/second" icon="pi pi-arrow-right" [rounded]="true" [text]="true" [raised]="true" severity="warning" />
+</div>
