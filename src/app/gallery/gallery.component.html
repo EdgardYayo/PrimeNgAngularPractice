@@ -1,4 +1,8 @@
-<div class="card" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+
+<div class="card" style="display: flex; justify-content: space-around; align-items: center; flex-direction: row; flex-wrap: wrap;">
+    <section>
+        <h1 class="title">Confetti Angular App</h1>
+    </section>
     <p-galleria 
         [value]="images" 
         [showIndicators]="true" 
@@ -6,9 +10,17 @@
         [responsiveOptions]="responsiveOptions" 
         [containerStyle]="{ 'max-width': '640px' }">
             <ng-template pTemplate="item" let-item>
-                <img [src]="item.itemImageSrc" style="max-width: 500px; display: block; max-height: 400px;" />
+                <img [src]="item.itemImageSrc" style="max-width: 500px; display: block; height: 300px;" />
             </ng-template>
     </p-galleria>
-    <p-button icon="pi pi-heart" [rounded]="true" [text]="true" [raised]="true" severity="help" />
-    <p-button routerLink="/second" icon="pi pi-arrow-right" [rounded]="true" [text]="true" [raised]="true" severity="warning" />
+    <aside>
+        <p-button icon="pi pi-heart" [rounded]="true" [text]="true" [raised]="true" severity="help" />
+        <p-button routerLink="/second" icon="pi pi-arrow-right" [rounded]="true" [text]="true" [raised]="true" severity="warning" />
+    </aside>
 </div>
+<div>
+    <h1 style="cursor: pointer;" (click)="makeRainConfetti()">This is a practice project if you click this text you are gonna see some confetti 😮</h1>
+</div>
+<section>
+    <span (click)="changeHeartsColor()" class="hearts" *ngFor="let heart of heartsArray">{{ heart }}</span>
+</section>

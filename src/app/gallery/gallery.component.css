@@ -1,0 +1,22 @@
+canvas {
+    height: 100%;
+    width: 100%;
+}
+
+.hearts {
+    color: #ff6347;
+}
+
+.title {
+    font-size: 3rem;
+    font-style: italic;
+    transition: all 500ms ease-in-out;
+}
+
+.title:hover {
+    transform: rotate(-10deg);
+    background-color: blueviolet;
+    color: white;
+    padding: 1rem;
+    border-radius: 50%;
+}
