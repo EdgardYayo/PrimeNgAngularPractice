@@ -1,0 +1,28 @@
+.side-list {
+    list-style: none;
+}
+
+.side-list > li {
+    margin-block: 1.5rem;
+    width: 80%;
+}
+
+.links {
+    display: block;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 0 20% 20% 0;
+    transition: all ease-in-out 250ms;
+}
+
+.links:hover {
+    border:solid 0.2rem purple;
+}
+
+
+section {
+    background: linear-gradient(to right,black, pink, black, purple);
+}

@@ -1,1 +1,17 @@
+<section style="padding: 10px;">
+    <p-sidebar [(visible)]="sidebarVisible1" position="left">
+        <ul class="side-list">
+            <li><a class="links" routerLink="/">Home</a></li>
+            <li><a class="links" routerLink="/second">Second</a></li>
+            <li><a class="links" routerLink="/circles">Circles</a></li>
+        </ul>
+    </p-sidebar>
+    <p-button 
+    type="button" 
+    class="mr-2" 
+    severity="help"
+    (click)="sidebarVisible1 = true" 
+    icon="pi pi-bars" />
+    <h2 style="display: inline; margin-left: 2rem; color: white;">Navega en Angular facilmente</h2>
+</section>
 <router-outlet></router-outlet>

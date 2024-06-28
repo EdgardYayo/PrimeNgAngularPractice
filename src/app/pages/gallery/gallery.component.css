@@ -1,0 +1,15 @@
+canvas {
+    height: 100%;
+    width: 100%;
+}
+
+.landing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 100vh;
+    background: url('https://ionic.io/blog/wp-content/uploads/2024/02/angular-feature-image-1.png');
+    background-size: cover;
+}

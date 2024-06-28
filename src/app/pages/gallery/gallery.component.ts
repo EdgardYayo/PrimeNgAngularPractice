@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { GalleriaModule } from 'primeng/galleria';
-import { ImagesService } from '../../services/images.service';
+import { ImagesService } from '../../../services/images.service';
 import { ButtonModule } from 'primeng/button';
 import * as confetti from 'canvas-confetti';
 
