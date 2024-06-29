@@ -24,5 +24,8 @@
 
 
 section {
-    background: linear-gradient(to right,black, pink, black, purple);
+    display: flex;
+    align-items: center;
+    background: blueviolet;
+    box-shadow: inset 0 0 3px 3px purple;
 }

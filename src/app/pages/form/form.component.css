@@ -1,0 +1,21 @@
+.form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+section {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+input {
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+}
+

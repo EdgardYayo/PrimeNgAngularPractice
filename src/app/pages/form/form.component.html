@@ -1,0 +1,26 @@
+<div class="form">
+    <p-floatLabel>
+        <input id="username" name="username" type="text" pInputText [(ngModel)]="username" />
+        <label for="username">Username</label>
+    </p-floatLabel>
+    <p-floatLabel>
+        <input id="lastname" name="lastname" type="text" pInputText [(ngModel)]="lastname" />
+        <label for="lastname">Lastname</label>
+    </p-floatLabel>
+    <p-floatLabel>
+        <input id="hobby" name="hobby" type="text" pInputText [(ngModel)]="hobby" />
+        <label for="hobby">Hobby</label>
+    </p-floatLabel>
+    <button 
+        pButton 
+        pRipple 
+        (click)="resetForm()"
+        label="Reset" 
+        class="p-button-success">
+    </button>
+    <section>
+        <h3>Your name: {{ username }}</h3>
+        <h3>Your lastname: {{ lastname }}</h3>
+        <h3>Your hobby/s: {{ hobby }}</h3>
+    </section>
+</div>
