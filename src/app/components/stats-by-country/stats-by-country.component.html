@@ -1,0 +1,22 @@
+<section>
+    <header>
+        <h1><i class="pi pi-flag" style="color: blue;"></i>{{ stats?.country }}</h1>
+        <h2><i class="pi pi-globe pi-spin" style="color: green;"></i>{{ stats?.continent }}</h2>
+    </header>
+    <p-divider align="center" type="dotted">
+        <b>Stats</b>
+    </p-divider>
+    <div>
+        <p><i class="pi pi-users" style="color: blue;"></i>Population: {{ stats?.population }}</p>
+        <p-divider layout="vertical"></p-divider>
+        <p><i class="pi pi-lightbulb" style="color: yellow;"></i>Active cases: {{ stats?.cases?.active ?? 'There is no active cases' }}</p>
+        <p-divider layout="vertical"></p-divider>
+        <p><i class="pi pi-times" style="color: red;"></i>Total deaths: {{ stats?.deaths?.total ?? 'There is no deaths' }}</p>
+    </div>
+    <p-button 
+        label="Search"
+        [rounded]="true" 
+        icon="pi pi-arrow-left"
+        routerLink="/timeline" />
+    <img src="https://www.un.org/sites/un2.un.org/files/field/image/coronavirus.jpg" width="400px" height="320px" style="border-radius: 50%;"/>
+</section>

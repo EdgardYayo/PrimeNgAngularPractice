@@ -1,17 +1,42 @@
-<div class="card">
-    <p-timeline [value]="events" styleClass="customized-timeline">
-        <ng-template pTemplate="marker" let-event>
-            <span 
-                class="flex w-2rem h-2rem align-items-center justify-content-center text-white border-circle z-1 shadow-1" 
-                [style]="{ 'background-color': event.color }">
-                    <i [class]="event.icon"></i>
-            </span>
+<div class="filter">
+    <input type="text" placeholder="Search for a country..." pInputText [(ngModel)]="countryToFilter" />
+    <p-button 
+        label="Filter"
+        [rounded]="true" 
+        icon="pi pi-filter"
+        severity="success"
+        (onClick)="filterCountrys()"
+     />
+     <p-divider layout="vertical"></p-divider>
+     <p-messages severity="success">
+        <ng-template pTemplate>
+            <div class="ml-2" style="font-size: 1.2rem; color: black;">Search for statistics about Covid-19 in your country.</div>
         </ng-template>
-        <ng-template pTemplate="content" let-event>
-            <small class="p-text-secondary">{{ event.date }}</small>
-        </ng-template>
-        <ng-template pTemplate="opposite" let-event>
-            {{ event.status }}
-        </ng-template>
-    </p-timeline>
+    </p-messages>
+    <p-toggleButton 
+        [(ngModel)]="checked" 
+        onLabel="Z-A" 
+        offLabel="A-Z"
+        (onChange)="toggleOrder()"
+     />
 </div>
+
+@if(loading) {
+    <div style="text-align: center;">
+        <p-progressSpinner strokeWidth="8"></p-progressSpinner>
+    </div>
+}
+
+@if(!loading) {
+    <div class="card">
+        @for(country of filteredCountrys; track country) {
+            <p-card [header]="'Stats of ' + country">
+                <a [routerLink]="['/stats', country]">
+                    <p class="m-0">
+                        {{ country }}
+                    </p>
+                </a>
+            </p-card>
+        }
+    </div>    
+}

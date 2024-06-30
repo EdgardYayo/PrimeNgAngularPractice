@@ -19,21 +19,6 @@ export class GalleryComponent implements OnInit {
   heartsArray: string[] = [];
   changeColor = false;
 
-  responsiveOptions: any[] = [
-    {
-        breakpoint: '1024px',
-        numVisible: 5
-    },
-    {
-        breakpoint: '768px',
-        numVisible: 3
-    },
-    {
-        breakpoint: '560px',
-        numVisible: 1
-    }
-];
-
   constructor(
     private imgService: ImagesService,
     private renderer2: Renderer2,
