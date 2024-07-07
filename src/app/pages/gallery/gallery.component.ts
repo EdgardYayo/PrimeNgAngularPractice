@@ -3,7 +3,7 @@ import { RouterLink } from '@angular/router';
 import { GalleriaModule } from 'primeng/galleria';
 import { ImagesService } from '../../shared/services/images.service';
 import { ButtonModule } from 'primeng/button';
-import * as confetti from 'canvas-confetti';
+import confetti from 'canvas-confetti';
 
 @Component({
   selector: 'app-gallery',
@@ -37,10 +37,19 @@ export class GalleryComponent implements OnInit {
     canvas.style.left = '0';
     this.renderer2.appendChild(document.body, canvas);
     const myConfetti = confetti.create(canvas, {
-      resize: true
+      resize: true,
     })
+
+    let scalar = 3;
+    let coronavirus = confetti.shapeFromText({
+          text: '🦠',
+          scalar
+        })
+
     myConfetti({
-      particleCount: 1000,
+      shapes: [coronavirus],
+      scalar,
+      particleCount: 500,
       startVelocity: 30,
       spread: 360,
       origin: {
