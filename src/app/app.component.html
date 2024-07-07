@@ -1,19 +1,19 @@
 <section style="padding: 10px;">
     <p-sidebar [(visible)]="sidebarVisible1" position="left">
         <ul class="side-list">
-            <li><a class="links" routerLink="/">Home</a></li>
-            <li><a class="links" routerLink="/second">Second</a></li>
+            <li><a class="links" routerLink="/">Landing page</a></li>
+            <li><a class="links" routerLink="/second">Images</a></li>
             <li><a class="links" routerLink="/circles">Circles</a></li>
-            <li><a class="links" routerLink="/form">Form</a></li>
+            <li><a class="links" routerLink="/form">Covid-News</a></li>
             <li><a class="links" routerLink="/timeline">Covid-19-Stats</a></li>
         </ul>
     </p-sidebar>
     <p-button 
     type="button" 
     class="mr-2" 
-    severity="contrast"
+    severity="secondary"
     (click)="sidebarVisible1 = true" 
     icon="pi pi-bars" />
-    <h2 style="display: inline; margin-left: 2rem; color: white;">Navega en Angular facilmente</h2>
+    <h2 style="display: inline; margin-left: auto; margin-right: 2rem; color: white; text-shadow: 5px 7px 2px black;">Know the most recent stats of COVID-19</h2>
 </section>
 <router-outlet></router-outlet>

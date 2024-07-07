@@ -1,14 +1,32 @@
-<div class="card flex justify-content-center">
-    <p-card header="Welcome to Angular">
-        <p class="m-0">
-           We are developing and application with Angular and PrimeNg
-        </p>
-    </p-card>
-</div>
-<div class="card flex justify-content-center">
-    <p-card header="Why Angular">
-        <p class="m-0">
-           We are just using angular to do this so Angular must be very powerfull
-        </p>
-    </p-card>
+<div style="display: flex;">
+    <h1 style="padding: 0.5rem; text-shadow: 3px 6px 2px #1EA97C;">COVID-19-IMAGES</h1>
+    <div class="card">
+        <div *ngIf="images" class="grid" style="max-width: 800px; margin: auto; text-align: center; padding: 1rem;">
+            <div *ngFor="let image of images; let index = index" class="col-3" key="index" style="display: flex; justify-content: center; align-items: center;">
+                <img 
+                    [src]="image.thumbnailImageSrc" 
+                    [alt]="image.alt" 
+                    class="img-static"
+                    style="cursor: pointer; max-width: 50%; height: 60%; margin-block: 0.5rem; border-radius: 1rem;" 
+                    (click)="imageClick(index)" />
+            </div>
+        </div>
+        <p-galleria
+            [value]="images"
+            [(visible)]="displayCustom"
+            [(activeIndex)]="activeIndex"
+            [responsiveOptions]="responsiveOptions"
+            [containerStyle]="{ 'max-width': '850px' }"
+            [numVisible]="7"
+            [circular]="true"
+            [fullScreen]="true"
+            [showItemNavigators]="true"
+            [showThumbnails]="false">
+            <ng-template pTemplate="item" let-item>
+                <img 
+                    [src]="item.itemImageSrc" 
+                    style="width: 100%; display: block;" />
+            </ng-template>
+        </p-galleria>
+    </div>
 </div>

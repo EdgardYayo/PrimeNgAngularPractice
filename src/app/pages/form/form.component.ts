@@ -1,23 +1,25 @@
-import { Component, viewChild } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
-import { ButtonModule } from 'primeng/button';
-import { FloatLabelModule } from "primeng/floatlabel"
+import { Component, OnInit, viewChild } from '@angular/core';
+import { AccordionModule } from 'primeng/accordion';
+import { CovidService } from '../../shared/services/covid.services';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [FloatLabelModule, FormsModule, ButtonModule],
+  imports: [AccordionModule, NgFor],
   templateUrl: './form.component.html',
-  styleUrl: './form.component.css'
+  styleUrl: './form.component.css',
+  providers: [CovidService]
 })
-export class FormComponent {
-  username: string | undefined;
-  lastname: string | undefined;
-  hobby: string | undefined;
+export class FormComponent implements OnInit {
+  news: any[] | undefined = [];
 
-  resetForm() {
-    this.username = '';
-    this.lastname = '';
-    this.hobby = '';
+  constructor(private covidService: CovidService) {}
+
+  ngOnInit(): void {
+      this.covidService.getNews().subscribe((data) => {
+        console.log(data);
+        this.news = data.articles;
+      })
   }
 }

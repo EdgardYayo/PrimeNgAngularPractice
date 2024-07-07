@@ -1,0 +1,5 @@
+.img-static:hover {
+    transition: all 250ms ease-in-out;
+    transform: scale(1.5);
+    box-shadow: 7px 9px 10px 3px #1EA97C;
+}

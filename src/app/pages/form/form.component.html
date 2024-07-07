@@ -1,26 +1,16 @@
-<div class="form">
-    <p-floatLabel>
-        <input id="username" name="username" type="text" pInputText [(ngModel)]="username" />
-        <label for="username">Username</label>
-    </p-floatLabel>
-    <p-floatLabel>
-        <input id="lastname" name="lastname" type="text" pInputText [(ngModel)]="lastname" />
-        <label for="lastname">Lastname</label>
-    </p-floatLabel>
-    <p-floatLabel>
-        <input id="hobby" name="hobby" type="text" pInputText [(ngModel)]="hobby" />
-        <label for="hobby">Hobby</label>
-    </p-floatLabel>
-    <button 
-        pButton 
-        pRipple 
-        (click)="resetForm()"
-        label="Reset" 
-        class="p-button-success">
-    </button>
-    <section>
-        <h3>Your name: {{ username }}</h3>
-        <h3>Your lastname: {{ lastname }}</h3>
-        <h3>Your hobby/s: {{ hobby }}</h3>
-    </section>
+<div class="card flex justify-content-center" style="padding: 0.5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; grid-row: span;">
+    @for(new of news; track new) {
+        <p-accordion [activeIndex]="$index">
+            <p-accordionTab [header]="new.title">
+                <p>
+                   {{ new.summary }}
+                </p>
+                <section style="text-align: center; border: none;">
+                    <img [src]="new.media" width="50%" height="50%" style="border-radius: 0.5rem;" alt="author {{ new.author }}"/>
+                </section>
+            </p-accordionTab>
+        </p-accordion>
+    }
 </div>
+
+

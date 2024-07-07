@@ -26,6 +26,5 @@
 section {
     display: flex;
     align-items: center;
-    background: blueviolet;
-    box-shadow: inset 0 0 3px 3px purple;
+    background: #1EA97C;
 }
