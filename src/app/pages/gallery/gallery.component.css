@@ -20,3 +20,17 @@ h1 {
     top: 1rem;
     left: 1rem;
 }
+
+h3 {
+    /* background: linear-gradient(to left, black, white); */
+    text-shadow: 1px 1px 1px white;
+}
+
+mark {
+    /* color: #1EA97C; */
+    color: white;
+    text-transform: uppercase;
+    background-color: black;
+    border-radius: 0.3rem;
+    padding: 2px;
+}
