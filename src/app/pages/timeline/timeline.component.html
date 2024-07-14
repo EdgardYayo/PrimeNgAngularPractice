@@ -30,10 +30,11 @@
 @if(!loading) {
     <div class="card">
         @for(country of filteredCountrys; track country) {
-            <p-card [header]="'Stats of ' + country">
+            <p-card [header]="'Stats of ' + country"  [style]="{'background-color':'#1EA97C', 'color': 'white'}">
                 <a [routerLink]="['/stats', country]">
-                    <p class="m-0">
+                    <p class="m-0 country-name">
                         {{ country }}
+                        <i class="pi pi-external-link" style="font-size: 2rem; color: lightgray;"></i>
                     </p>
                 </a>
             </p-card>
